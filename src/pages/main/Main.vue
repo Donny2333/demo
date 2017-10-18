@@ -23,6 +23,8 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     data () {
       return {}
@@ -32,11 +34,10 @@
         this.$router.push({name: name})
       }
     },
-    computed: {
-      selectedMenu () {
-        return this.$store.state.selectedMenu
-      }
-    }
+    computed: mapState({
+      selectedMenu: state => state.selectedMenu
+    })
+
   }
 </script>
 

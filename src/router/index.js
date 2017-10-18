@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import About from '@/components/About'
-import Browser from '@/components/Browser'
-import Comment from '@/components/Comment'
+import Main from '@/pages/main/Main'
+import About from '@/pages/about/About'
+import Browser from '@/pages/browser/Browser'
+import Comment from '@/pages/comment/Comment'
 
 Vue.use(Router)
 
@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home,
+      name: 'main',
+      component: Main,
       beforeEnter: (to, from, next) => {
         next()
       },
