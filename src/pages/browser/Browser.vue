@@ -19,7 +19,9 @@
     },
     methods: {
       search () {
-        console.log(this.searchText)
+        if (this.searchText.length) {
+          console.log(this.searchText)
+        }
       }
     },
     created () {

@@ -2,17 +2,9 @@
   <div>
     <Row>
       <Menu mode="horizontal" width="auto" :activeName="selectedMenu" @on-select="select">
-        <Menu-item name="about">
-          <Icon type="ios-paper"></Icon>
-          关于
-        </Menu-item>
-        <Menu-item name="browser">
-          <Icon type="ios-people"></Icon>
-          浏览
-        </Menu-item>
-        <Menu-item name="comment">
-          <Icon type="settings"></Icon>
-          评论
+        <Menu-item v-for="menu in menus" :name="menu.name">
+          <Icon :type="menu.icon"></Icon>
+          {{ menu.text }}
         </Menu-item>
       </Menu>
     </Row>
@@ -27,7 +19,25 @@
 
   export default {
     data () {
-      return {}
+      return {
+        menus: [{
+          name: 'about',
+          icon: 'information-circled',
+          text: '关于'
+        }, {
+          name: 'browser',
+          icon: 'search',
+          text: '浏览'
+        }, {
+          name: 'comment',
+          icon: 'gear-a',
+          text: '评论'
+        }, {
+          name: 'diagram',
+          icon: 'stats-bars',
+          text: '图表'
+        }]
+      }
     },
     methods: {
       select (name) {
